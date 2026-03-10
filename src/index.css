@@ -7,8 +7,9 @@
   --color-background-dark: #020617;
   --color-text-light: #F8FAFC;
   
-  --font-heading: 'Archivo', sans-serif;
-  --font-body: 'Space Grotesk', sans-serif;
+  --font-heading: 'Share Tech Mono', monospace;
+  --font-body: 'Fira Code', monospace;
+  --font-mono: 'Fira Code', monospace;
 }
 
 body {
