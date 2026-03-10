@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import HackerTerminal from './HackerTerminal';
+import HeroMatrix from './HeroMatrix';
 
 export default function Hero() {
     return (
@@ -15,8 +16,12 @@ export default function Hero() {
                         initial={{ opacity: 0, x: -50 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="w-full flex justify-center lg:justify-start"
+                        className="w-full flex justify-center lg:justify-start relative"
                     >
+                        <div className="absolute inset-[-15%] md:inset-[-30%] -z-10 bg-background-dark/40 rounded-[3rem] blur-2xl" />
+                        <div className="absolute inset-[-15%] md:inset-[-30%] -z-10">
+                            <HeroMatrix />
+                        </div>
                         <HackerTerminal />
                     </motion.div>
 
