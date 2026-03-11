@@ -1,5 +1,24 @@
 import { useRef, useEffect } from 'react';
 
+// --- MATRIX CONFIGURATION ---
+// You can edit these values to change how the matrix effect looks and feels!
+export const MATRIX_CONFIG = {
+    // Density & Size
+    FONT_SIZE: 20,                 // Smaller number = More dense columns. Larger = less dense.
+
+    // Speed
+    MIN_SPEED: 0.5,                // Minimum falling speed
+    MAX_SPEED: 1.5,                // Maximum falling speed
+
+    // Performance & Framerate
+    FPS: 30,                       // Higher = smoother but more CPU intensive. 24 or 30 is good.
+    ENABLE_GLOW: true,             // Set to false to massively improve performance on old computers
+
+    // Visuals
+    TRAIL_OPACITY_FADE: 0.15,      // How fast the trails fade out (lower = longer trails)
+    DROP_RESET_PROBABILITY: 0.95,  // Probability a drop will reset after falling off-screen
+};
+
 export default function HeroMatrix() {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -15,7 +34,7 @@ export default function HeroMatrix() {
         let animationFrameId: number;
         let isVisible = true;
         let lastDrawTime = 0;
-        const fps = 30;
+        const fps = MATRIX_CONFIG.FPS;
         const interval = 1000 / fps;
 
         // Make it high res
@@ -34,7 +53,7 @@ export default function HeroMatrix() {
         // Characters for the matrix rain
         const characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZアイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン*&^%$#@!'.split('');
 
-        const fontSize = 20;
+        const fontSize = MATRIX_CONFIG.FONT_SIZE;
         // Calculate logical columns based on unscaled width
         let columns = Math.ceil((canvas.width / (Math.min(window.devicePixelRatio || 1, 2))) / fontSize);
 
@@ -48,7 +67,7 @@ export default function HeroMatrix() {
             opacities = [];
             for (let x = 0; x < columns; x++) {
                 drops[x] = Math.random() * -100;
-                speeds[x] = 0.5 + Math.random() * 1.5;
+                speeds[x] = MATRIX_CONFIG.MIN_SPEED + Math.random() * (MATRIX_CONFIG.MAX_SPEED - MATRIX_CONFIG.MIN_SPEED);
                 opacities[x] = 0.5 + Math.random() * 0.5;
             }
         };
@@ -68,7 +87,7 @@ export default function HeroMatrix() {
             const logicalHeight = canvas.height / (Math.min(window.devicePixelRatio || 1, 2));
 
             // Radial gradient mask for trail effect
-            ctx.fillStyle = 'rgba(2, 6, 23, 0.15)'; // Slightly darker to clear faster (better performance than long trails)
+            ctx.fillStyle = `rgba(2, 6, 23, ${MATRIX_CONFIG.TRAIL_OPACITY_FADE})`; // Slightly darker to clear faster (better performance than long trails)
             ctx.fillRect(0, 0, logicalWidth, logicalHeight);
 
             ctx.font = `bold ${fontSize}px "Fira Code", monospace`;
@@ -89,8 +108,12 @@ export default function HeroMatrix() {
                 // Head of the drop
                 if (Math.random() > 0.90) {
                     ctx.fillStyle = `rgba(134, 239, 172, ${edgeFade})`;
-                    ctx.shadowColor = '#4ADE80';
-                    ctx.shadowBlur = 10;
+                    if (MATRIX_CONFIG.ENABLE_GLOW) {
+                        ctx.shadowColor = '#4ADE80';
+                        ctx.shadowBlur = 10;
+                    } else {
+                        ctx.shadowBlur = 0;
+                    }
                 } else {
                     ctx.shadowBlur = 0;
                 }
@@ -98,9 +121,9 @@ export default function HeroMatrix() {
                 ctx.fillText(text, xPos, drops[i] * fontSize);
 
                 // Reset drop
-                if (drops[i] * fontSize > logicalHeight && Math.random() > 0.95) {
+                if (drops[i] * fontSize > logicalHeight && Math.random() > MATRIX_CONFIG.DROP_RESET_PROBABILITY) {
                     drops[i] = 0;
-                    speeds[i] = 0.5 + Math.random() * 1.5;
+                    speeds[i] = MATRIX_CONFIG.MIN_SPEED + Math.random() * (MATRIX_CONFIG.MAX_SPEED - MATRIX_CONFIG.MIN_SPEED);
                 }
 
                 drops[i] += speeds[i];
