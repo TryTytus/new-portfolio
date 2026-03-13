@@ -12,7 +12,7 @@ export const MATRIX_CONFIG = {
     MAX_SPEED: 1.5,
     FPS: 30,
     ENABLE_GLOW: true,
-    TRAIL_OPACITY_FADE: 0.90,
+    TRAIL_OPACITY_FADE: 0.15,
     DROP_RESET_PROBABILITY: 0.95,
 } as const;
 
