@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import HackerTerminal from './HackerTerminal';
-import HeroMatrix from './HeroMatrix';
+import HeroMatrixWebGL from './HeroMatrixWebGL';
 
 export default function Hero() {
     return (
@@ -20,7 +20,7 @@ export default function Hero() {
                     >
                         <div className="absolute inset-[-15%] md:inset-[-30%] -z-10 bg-background-dark/40 rounded-[3rem] blur-2xl" />
                         <div className="absolute inset-[-15%] md:inset-[-30%] -z-10">
-                            <HeroMatrix />
+                            <HeroMatrixWebGL />
                         </div>
                         <HackerTerminal />
                     </motion.div>
