@@ -29,7 +29,7 @@ export default function Skills() {
                     <div>
                         <div className="flex items-center gap-3 mb-4">
                             <Terminal className="text-cta w-6 h-6" />
-                            <span className="font-mono text-secondary uppercase tracking-widest text-sm">Tech_Stack.md</span>
+                            <span className="font-mono text-cta uppercase tracking-widest text-sm">Tech_Stack.md</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold">Skills & Technologies</h2>
                     </div>

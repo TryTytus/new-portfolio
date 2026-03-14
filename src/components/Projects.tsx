@@ -51,7 +51,7 @@ export default function Projects() {
                     <div>
                         <div className="flex items-center gap-3 mb-4">
                             <FolderGit2 className="text-cta w-6 h-6" />
-                            <span className="font-mono text-secondary uppercase tracking-widest text-sm">Deployments.log</span>
+                            <span className="font-mono text-cta uppercase tracking-widest text-sm">Deployments.log</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold">Featured Projects</h2>
                     </div>

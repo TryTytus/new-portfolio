@@ -20,7 +20,7 @@ export default function CyberCV() {
                 style={{ backgroundImage: 'radial-gradient(var(--color-cta) 1px, transparent 1px)', backgroundSize: '40px 40px' }}
             />
 
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
@@ -36,7 +36,7 @@ export default function CyberCV() {
                             <div>
                                 <div className="flex items-center gap-3 mb-4">
                                     <Terminal className="text-cta w-6 h-6" />
-                                    <span className="text-secondary uppercase tracking-widest text-sm">Profile.md</span>
+                                    <span className="bg-cta/20 text-cta border border-cta/40 px-2 py-0.5 text-xs uppercase tracking-widest">Profile.md</span>
                                 </div>
                                 <h2 className="text-4xl md:text-5xl font-bold">About</h2>
                             </div>
@@ -58,36 +58,57 @@ export default function CyberCV() {
                             </a>
                         </div>
 
-                        {/* Name + bio */}
-                        <h3 className="text-2xl font-bold text-cta mb-1">Adam Tytoń</h3>
-                        <p className="text-text-light/50 text-sm mb-4 tracking-wider uppercase">&lt; Software_Developer /&gt;</p>
-                        <p className="text-text-light/75 text-base leading-relaxed max-w-2xl mb-10">
-                            Full Stack Developer at Siemens. I build efficient REST APIs with PHP and SQL and craft
-                            frontend interfaces with JavaScript. Comfortable in Scrum teams, passionate about clean code.
-                        </p>
+                        {/* Name + bio — now beside photo */}
+                        <div className="flex flex-col md:flex-row gap-8 items-start mb-10">
+                            {/* Photo */}
+                            <div className="relative w-40 h-40 shrink-0 overflow-hidden border border-cta/50 bg-background-dark/50 shadow-[0_0_20px_rgba(34,197,94,0.2)] group-hover:border-cta duration-500">
+                                <img
+                                    src="/image.png"
+                                    alt="Adam Tytoń"
+                                    className="w-full h-full object-cover"
+                                />
+                                {/* Corner accents */}
+                                <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-cta pointer-events-none" />
+                                <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-cta pointer-events-none" />
+                                <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-cta pointer-events-none" />
+                                <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-cta pointer-events-none" />
+                                {/* Subtle scanline overlay */}
+                                <div className="absolute inset-0 bg-cta/5 mix-blend-overlay pointer-events-none" />
+                            </div>
+
+                            {/* Text */}
+                            <div className="flex-1">
+                                <h3 className="text-2xl font-bold text-cta mb-1">Adam Tytoń</h3>
+                                <p className="text-text-light/50 text-sm mb-4 tracking-wider uppercase">&lt; Software_Developer /&gt;</p>
+                                <p className="text-text-light/75 text-base leading-relaxed">
+                                    Full Stack Developer at Siemens. I build efficient REST APIs with PHP and SQL and craft
+                                    frontend interfaces with JavaScript. Comfortable in Scrum teams, passionate about clean code.
+                                </p>
+                            </div>
+                        </div>
 
                         {/* Languages & Interests as simple two-col */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
                             <div>
-                                <h4 className="text-secondary text-xs uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <h4 className="text-cta/70 text-xs uppercase tracking-wider mb-4 flex items-center gap-2">
                                     <Terminal className="w-4 h-4" /> Languages
                                 </h4>
-                                <div className="space-y-3 text-sm text-text-light/75">
+                                <div className="space-y-3 text-sm text-text-light/90">
                                     <div className="flex justify-between border-b border-secondary/20 pb-2">
                                         <span>Polski</span>
                                         <span className="text-cta">Native</span>
                                     </div>
                                     <div className="flex justify-between border-b border-secondary/20 pb-2">
                                         <span>Angielski (Tech)</span>
-                                        <span className="text-text-light/50">B2</span>
+                                        <span className="text-text-light/70">B2</span>
                                     </div>
                                 </div>
                             </div>
                             <div>
-                                <h4 className="text-secondary text-xs uppercase tracking-wider mb-4 flex items-center gap-2">
+                                <h4 className="text-cta/70 text-xs uppercase tracking-wider mb-4 flex items-center gap-2">
                                     <Terminal className="w-4 h-4" /> Interests
                                 </h4>
-                                <ul className="space-y-2 text-sm text-text-light/75">
+                                <ul className="space-y-2 text-sm text-text-light/90">
                                     <li className="flex items-start gap-2"><span className="text-cta">&gt;</span> Artificial Intelligence &amp; ML</li>
                                     <li className="flex items-start gap-2"><span className="text-cta">&gt;</span> Sailing</li>
                                 </ul>
@@ -102,7 +123,7 @@ export default function CyberCV() {
                             <div>
                                 <div className="flex items-center gap-3 mb-4">
                                     <Briefcase className="text-cta w-6 h-6" />
-                                    <span className="text-secondary uppercase tracking-widest text-sm">Experience.log</span>
+                                    <span className="bg-cta/20 text-cta border border-cta/40 px-2 py-0.5 text-xs uppercase tracking-widest">Experience.log</span>
                                 </div>
                                 <h2 className="text-4xl md:text-5xl font-bold">Work History</h2>
                             </div>
@@ -135,7 +156,7 @@ export default function CyberCV() {
                             <div>
                                 <div className="flex items-center gap-3 mb-4">
                                     <GraduationCap className="text-cta w-6 h-6" />
-                                    <span className="text-secondary uppercase tracking-widest text-sm">Education.dat</span>
+                                    <span className="bg-cta/20 text-cta border border-cta/40 px-2 py-0.5 text-xs uppercase tracking-widest">Education.dat</span>
                                 </div>
                                 <h2 className="text-4xl md:text-5xl font-bold">Academic Core</h2>
                             </div>
@@ -155,17 +176,7 @@ export default function CyberCV() {
 
                 </motion.div>
 
-                {/* GDPR */}
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.4 }}
-                    className="mt-24 pb-12 border-t border-secondary/20 pt-8 text-center text-text-light/30 text-xs max-w-3xl mx-auto hover:text-text-light/50 transition-colors"
-                >
-                    I hereby give consent for my personal data included in my CV to be processed for the purposes of current
-                    and future recruitment processes, in accordance with Regulation (EU) 2016/679 (GDPR).
-                </motion.p>
+
             </div>
         </section>
     );
