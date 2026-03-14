@@ -36,13 +36,13 @@ export default function Hero() {
                             <span className="text-cta font-mono text-sm leading-none neon-text">System Status: Online & Ready</span>
                         </div>
                         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-                            Engineering <br />
-                            <span className="text-cta glitch-effect neon-text" data-text="Digital Realities">
-                                Digital Realities
+                            Full Stack <br />
+                            <span className="text-cta glitch-effect neon-text" data-text="Developer">
+                                Developer
                             </span>
                         </h1>
                         <p className="text-xl text-text-light/70 mb-8 max-w-lg font-mono">
-                            &gt; I'm a Frontend Developer specializing in high-performance web applications, interactive UI/UX, and creative coding.
+                            &gt; Full Stack Developer @ Siemens. I build REST APIs with PHP &amp; SQL and craft frontends with JavaScript — from Daily Standups to deployment.
                         </p>
 
                         <div className="flex flex-wrap gap-4 font-mono">

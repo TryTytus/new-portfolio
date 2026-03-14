@@ -1,12 +1,27 @@
 import { motion } from 'framer-motion';
-import { Terminal, Database, Layout, Server, Shield, Smartphone } from 'lucide-react';
+import { Terminal, Database, Layout, Server, Code } from 'lucide-react';
 
 const skillsData = [
-    { category: 'Frontend Architecture', icon: Layout, tech: ['React', 'Next.js', 'Tailwind', 'Framer Motion'] },
-    { category: 'Backend Systems', icon: Server, tech: ['Node.js', 'Express', 'PostgreSQL', 'Redis'] },
-    { category: 'Cloud & DevOps', icon: Database, tech: ['AWS', 'Docker', 'CI/CD', 'Vercel'] },
-    { category: 'Mobile Dev', icon: Smartphone, tech: ['React Native', 'Expo', 'SwiftUI', 'Kotlin'] },
-    { category: 'Security', icon: Shield, tech: ['OAuth 2.0', 'JWT', 'Pen Testing', 'WebCrypto API'] },
+    {
+        category: 'Backend Technologies',
+        icon: Server,
+        tech: ['PHP', 'SQL', 'Laravel', 'Node.js', 'Python', 'Java', 'Spring Boot', 'Express.js']
+    },
+    {
+        category: 'Frontend Technologies',
+        icon: Layout,
+        tech: ['React', 'JavaScript', 'TypeScript', 'Vue', 'Nuxt.js', 'HTML', 'CSS', 'Tailwind CSS', 'Alpine.js', 'jQuery']
+    },
+    {
+        category: 'Databases & APIs',
+        icon: Database,
+        tech: ['MySQL', 'PostgreSQL', 'REST APIs', 'Query Optimisation']
+    },
+    {
+        category: 'Additional Skills',
+        icon: Code,
+        tech: ['Bash', 'Docker', 'Git']
+    },
 ];
 
 export default function Skills() {
@@ -31,14 +46,14 @@ export default function Skills() {
                             <Terminal className="text-cta w-6 h-6" />
                             <span className="font-mono bg-cta/20 text-cta border border-cta/40 px-2 py-0.5 text-xs uppercase tracking-widest">Tech_Stack.md</span>
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-bold">Skills & Technologies</h2>
+                        <h2 className="text-4xl md:text-5xl font-bold">Skills &amp; Technologies</h2>
                     </div>
                     <p className="text-text-light/60 max-w-sm mt-6 md:mt-0 font-mono text-sm">
-                        Core competencies bridging creative design and robust system engineering.
+                        Full stack competencies — from robust PHP &amp; SQL backends to polished JavaScript frontends.
                     </p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {skillsData.map((skill, index) => (
                         <motion.div
                             key={skill.category}

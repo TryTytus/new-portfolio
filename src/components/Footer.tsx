@@ -10,7 +10,7 @@ export default function Footer() {
 
                     <div className="flex flex-col items-center md:items-start gap-2">
                         <span className="font-heading font-bold text-xl tracking-tighter">
-                            DEV<span className="text-cta">_</span>PRO
+                            ADAM<span className="text-cta">_</span>TYTOŃ
                         </span>
                         <span className="text-text-light/50 font-mono text-sm">
                             © {currentYear} System Operating Normally.
@@ -18,10 +18,9 @@ export default function Footer() {
                     </div>
 
                     <div className="flex items-center gap-6">
-                        <SocialLink href="#" icon={Github} />
-                        <SocialLink href="#" icon={Linkedin} />
-                        <SocialLink href="#" icon={Twitter} />
-                        <SocialLink href="#" icon={Mail} />
+                        <SocialLink href="https://github.com/trytytus" icon={Github} />
+                        <SocialLink href="https://www.linkedin.com/in/adam-tyton/" icon={Linkedin} />
+                        <SocialLink href="mailto:adamtyton1@gmail.com" icon={Mail} />
                     </div>
 
                 </div>

@@ -43,7 +43,7 @@ export default function Navbar() {
                     <a href="#home" className="flex items-center gap-2 cursor-pointer group">
                         <Terminal className="text-cta w-8 h-8 group-hover:text-emerald-400 transition-colors" />
                         <span className="font-heading font-bold text-xl tracking-tighter">
-                            DEV<span className="text-cta">_</span>PRO
+                            ADAM<span className="text-cta">_</span>TYTOŃ
                         </span>
                     </a>
 
