@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 
 const ASCII_ART = `
@@ -22,52 +22,55 @@ const SEQUENCE = [
 
 export default function HackerTerminal() {
     const [lines, setLines] = useState<any[]>([]);
-    const [currentLineIndex, setCurrentLineIndex] = useState(0);
-    const [currentCharIndex, setCurrentCharIndex] = useState(0);
     const [isComplete, setIsComplete] = useState(false);
+    const activeTextRef = useRef<HTMLSpanElement>(null);
 
     useEffect(() => {
-        if (currentLineIndex >= SEQUENCE.length) {
-            setIsComplete(true);
-            return;
-        }
+        let isCancelled = false;
 
-        const currentCommand = SEQUENCE[currentLineIndex];
+        const runSequence = async () => {
+            for (let i = 0; i < SEQUENCE.length; i++) {
+                if (isCancelled) return;
+                const cmd = SEQUENCE[i];
 
-        if (currentCommand.type === "ascii") {
-            // Instantly render ASCII art with delay before next step
-            setLines(prev => [...prev, { ...currentCommand, displayedText: currentCommand.text }]);
-            const timer = setTimeout(() => {
-                setCurrentLineIndex(prev => prev + 1);
-                setCurrentCharIndex(0);
-            }, currentCommand.delay);
-            return () => clearTimeout(timer);
-        }
+                if (cmd.type === 'ascii') {
+                    setLines(prev => [...prev, { ...cmd, displayedText: cmd.text }]);
+                    await new Promise(r => setTimeout(r, cmd.delay));
+                    continue;
+                }
 
-        // Typewriter effect for regular text
-        if (currentCharIndex < currentCommand.text.length) {
-            const timer = setTimeout(() => {
-                setLines(prev => {
-                    const newLines = [...prev];
-                    if (newLines[currentLineIndex]) {
-                        newLines[currentLineIndex].displayedText = currentCommand.text.substring(0, currentCharIndex + 1);
-                    } else {
-                        newLines.push({ ...currentCommand, displayedText: currentCommand.text.substring(0, 1) });
+                // Add empty line to state first
+                setLines(prev => [...prev, { ...cmd, displayedText: '' }]);
+
+                // Type it out directly to DOM
+                for (let j = 0; j < cmd.text.length; j++) {
+                    if (isCancelled) return;
+                    if (activeTextRef.current) {
+                        activeTextRef.current.textContent = cmd.text.substring(0, j + 1);
                     }
-                    return newLines;
-                });
-                setCurrentCharIndex(prev => prev + 1);
-            }, 30); // Typing speed
-            return () => clearTimeout(timer);
-        } else {
-            // Line complete, wait for delay before next line
-            const timer = setTimeout(() => {
-                setCurrentLineIndex(prev => prev + 1);
-                setCurrentCharIndex(0);
-            }, currentCommand.delay);
-            return () => clearTimeout(timer);
-        }
-    }, [currentLineIndex, currentCharIndex]);
+                    await new Promise(r => setTimeout(r, 30));
+                }
+
+                // Finalize line in state
+                if (!isCancelled) {
+                    setLines(prev => {
+                        const newLines = [...prev];
+                        if (newLines.length > 0) {
+                            newLines[newLines.length - 1].displayedText = cmd.text;
+                        }
+                        return newLines;
+                    });
+                }
+
+                if (activeTextRef.current) activeTextRef.current.textContent = '';
+                await new Promise(r => setTimeout(r, cmd.delay));
+            }
+            if (!isCancelled) setIsComplete(true);
+        };
+
+        runSequence();
+        return () => { isCancelled = true; };
+    }, []);
 
     return (
         <motion.div
@@ -90,20 +93,24 @@ export default function HackerTerminal() {
 
             {/* Terminal body */}
             <div className="p-6 h-[400px] overflow-y-auto no-scrollbar flex flex-col gap-2">
-                {lines.map((line, idx) => (
-                    <div key={idx} className={`${line.color || 'text-secondary/80'} ${line.type === 'ascii' ? 'whitespace-pre text-[8px] sm:text-[10px] leading-none py-2' : ''}`}>
-                        {line.type === 'input' && <span className="text-emerald-500 mr-2">➜</span>}
-                        {line.type === 'input' && <span className="text-cyan-400 mr-2">~</span>}
-                        {line.displayedText}
-                        {idx === currentLineIndex && !isComplete && (
-                            <motion.span
-                                animate={{ opacity: [1, 0] }}
-                                transition={{ repeat: Infinity, duration: 0.8 }}
-                                className="inline-block w-2 h-4 bg-emerald-500 ml-1 align-middle"
-                            />
-                        )}
-                    </div>
-                ))}
+                {lines.map((line, idx) => {
+                    const isActive = idx === lines.length - 1 && !isComplete && line.type !== 'ascii';
+                    return (
+                        <div key={idx} className={`${line.color || 'text-secondary/80'} ${line.type === 'ascii' ? 'whitespace-pre text-[8px] sm:text-[10px] leading-none py-2' : ''}`}>
+                            {line.type === 'input' && <span className="text-emerald-500 mr-2">➜</span>}
+                            {line.type === 'input' && <span className="text-cyan-400 mr-2">~</span>}
+                            {line.displayedText}
+                            {isActive && <span ref={activeTextRef}></span>}
+                            {isActive && (
+                                <motion.span
+                                    animate={{ opacity: [1, 0] }}
+                                    transition={{ repeat: Infinity, duration: 0.8 }}
+                                    className="inline-block w-2 h-4 bg-emerald-500 ml-1 align-middle"
+                                />
+                            )}
+                        </div>
+                    );
+                })}
                 {isComplete && (
                     <div className="text-secondary/80">
                         <span className="text-emerald-500 mr-2">➜</span>

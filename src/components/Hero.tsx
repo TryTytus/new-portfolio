@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import HackerTerminal from './HackerTerminal';
-import HeroMatrixWebGL from './HeroMatrixWebGL';
 import HeroMatrix from './HeroMatrix';
 
 export default function Hero() {

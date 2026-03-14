@@ -11,7 +11,6 @@ export default function Contact() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    transition={{ duration: 0.5 }}
                     className="bg-background-dark/80 backdrop-blur-md border border-cta/30 rounded-none overflow-hidden shadow-[0_0_20px_rgba(34,197,94,0.1)] neon-border"
                 >
                     {/* Terminal Header */}

@@ -67,11 +67,38 @@ export default function CyberMatrixBackground() {
             }
         });
 
-        // Loop
-        const interval = setInterval(draw, 33); // ~30fps
+        let animationFrameId: number;
+        let lastDrawTime = 0;
+        const fps = 30;
+        const interval = 1000 / fps;
+        let isVisible = true;
+
+        const loop = (timestamp: number) => {
+            if (!isVisible) return;
+            animationFrameId = requestAnimationFrame(loop);
+
+            const deltaTime = timestamp - lastDrawTime;
+            if (deltaTime < interval) return;
+            lastDrawTime = timestamp - (deltaTime % interval);
+
+            draw();
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            isVisible = entries[0].isIntersecting;
+            if (isVisible) {
+                lastDrawTime = performance.now();
+                animationFrameId = requestAnimationFrame(loop);
+            } else {
+                cancelAnimationFrame(animationFrameId);
+            }
+        }, { threshold: 0 });
+
+        observer.observe(canvas);
 
         return () => {
-            clearInterval(interval);
+            observer.disconnect();
+            cancelAnimationFrame(animationFrameId);
             window.removeEventListener('resize', resizeCanvas);
         };
     }, []);
@@ -80,6 +107,7 @@ export default function CyberMatrixBackground() {
         <canvas
             ref={canvasRef}
             className="fixed top-0 left-0 w-full h-full -z-10 bg-background-dark pointer-events-none opacity-40"
+            style={{ willChange: 'transform', transform: 'translateZ(0)' }}
         />
     );
 }

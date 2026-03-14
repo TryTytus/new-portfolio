@@ -30,7 +30,7 @@ export default function Footer() {
     );
 }
 
-function SocialLink({ href, icon: Icon }: { href: string; icon: React.ElementType }) {
+function SocialLink({ href, icon: Icon }: { href: string; icon: any }) {
     return (
         <a
             href={href}
