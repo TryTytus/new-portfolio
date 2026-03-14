@@ -72,17 +72,16 @@ export default function CyberCV() {
                                 <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-cta pointer-events-none" />
                                 <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-cta pointer-events-none" />
                                 <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-cta pointer-events-none" />
-                                {/* Subtle scanline overlay */}
-                                <div className="absolute inset-0 bg-cta/5 mix-blend-overlay pointer-events-none" />
                             </div>
 
                             {/* Text */}
                             <div className="flex-1">
                                 <h3 className="text-2xl font-bold text-cta mb-1">Adam Tytoń</h3>
-                                <p className="text-text-light/50 text-sm mb-4 tracking-wider uppercase">&lt; Software_Developer /&gt;</p>
+                                <p className="text-cta/80 text-sm mb-4 tracking-wider font-mono">&lt; Software_Developer /&gt;</p>
                                 <p className="text-text-light/75 text-base leading-relaxed">
-                                    Full Stack Developer at Siemens. I build efficient REST APIs with PHP and SQL and craft
-                                    frontend interfaces with JavaScript. Comfortable in Scrum teams, passionate about clean code.
+                                    I am a Full Stack Developer at Siemens Industry Software, responsible for end-to-end web application development.
+                                    My daily work spans efficient REST APIs in PHP &amp; SQL to interactive frontends in JavaScript.
+                                    I thrive in Scrum teams, write clean tested code, and am passionate about AI and machine learning.
                                 </p>
                             </div>
                         </div>
@@ -133,7 +132,7 @@ export default function CyberCV() {
                         <div className="space-y-1 mb-4">
                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                                 <h3 className="text-xl font-bold text-text-light">Full Stack Developer Intern</h3>
-                                <span className="text-text-light/40 text-sm whitespace-nowrap">Jul 2025 – Present</span>
+                                <span className="text-text-light/40 text-sm whitespace-nowrap">Jul 2024 – Present</span>
                             </div>
                             <p className="text-cta text-sm tracking-wider flex items-center gap-2">
                                 <span className="w-1.5 h-1.5 bg-cta inline-block" />
@@ -141,11 +140,12 @@ export default function CyberCV() {
                             </p>
                         </div>
                         <ul className="space-y-3 text-text-light/70 text-sm leading-relaxed pl-4 border-l border-secondary/30">
-                            <li className="flex items-start gap-3"><span className="text-cta mt-0.5">▹</span> Creating user interfaces with HTML and JavaScript for a web application.</li>
-                            <li className="flex items-start gap-3"><span className="text-cta mt-0.5">▹</span> Building REST APIs and complex backend logic using PHP and SQL.</li>
-                            <li className="flex items-start gap-3"><span className="text-cta mt-0.5">▹</span> Performance optimisation and ensuring high code quality.</li>
-                            <li className="flex items-start gap-3"><span className="text-cta mt-0.5">▹</span> Agile Scrum team — daily standups, sprint planning.</li>
-                            <li className="flex items-start gap-3"><span className="text-cta mt-0.5">▹</span> Writing unit and end-to-end tests.</li>
+                            <li className="flex items-start gap-3"><span className="text-cta mt-0.5">▹</span> Creating user interfaces based on HTML &amp; JavaScript for a web application.</li>
+                            <li className="flex items-start gap-3"><span className="text-cta mt-0.5">▹</span> Implementing complex backend functions and creating REST APIs using PHP &amp; SQL.</li>
+                            <li className="flex items-start gap-3"><span className="text-cta mt-0.5">▹</span> Business logic implementation and application performance optimization.</li>
+                            <li className="flex items-start gap-3"><span className="text-cta mt-0.5">▹</span> Ensuring high code quality — active participation in Scrum team Daily Standups.</li>
+                            <li className="flex items-start gap-3"><span className="text-cta mt-0.5">▹</span> Creating and conducting unit and end-to-end tests.</li>
+                            <li className="flex items-start gap-3"><span className="text-cta mt-0.5">▹</span> API integration with frontend using REST; creating and optimizing database queries.</li>
                         </ul>
                     </motion.div>
 

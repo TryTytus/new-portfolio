@@ -3,35 +3,39 @@ import { ExternalLink, Github, FolderGit2 } from 'lucide-react';
 
 const projects = [
     {
-        title: 'Neon E-Commerce',
-        summary: 'A high-performance headless commerce storefront.',
-        tech: ['Next.js', 'Stripe', 'Tailwind', 'Zustand'],
+        title: 'Portfolio Website',
+        summary: 'This cyberpunk-themed developer portfolio — built with React, TypeScript and Framer Motion.',
+        tech: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
+        image: 'border-b border-cta/30 bg-primary/20',
+        status: 'LIVE',
+        github: 'https://github.com/TryTytus',
+        link: '#'
+    },
+    {
+        title: 'REST API — PHP/SQL',
+        summary: 'Backend REST API built at Siemens: complex business logic, query optimisation and unit tests.',
+        tech: ['PHP', 'SQL', 'REST API', 'PHPUnit'],
         image: 'border-b border-cta/30 bg-primary/20',
         status: 'PRODUCTION',
+        github: 'https://github.com/TryTytus',
         link: '#'
     },
     {
-        title: 'Defi Dashboard',
-        summary: 'Real-time crypto portfolio tracker with Web3 integration.',
-        tech: ['React', 'Ethers.js', 'Recharts', 'Framer Motion'],
+        title: 'Full Stack Web App',
+        summary: 'End-to-end web application with Laravel backend and Vue.js frontend, integrated via REST.',
+        tech: ['Laravel', 'Vue 3', 'MySQL', 'Docker'],
         image: 'border-b border-cta/30 bg-primary/20',
-        status: 'BETA',
+        status: 'DEPLOYED',
+        github: 'https://github.com/TryTytus',
         link: '#'
     },
     {
-        title: 'AI Prompt Engine',
-        summary: 'SaaS tool for generating and testing LLM prompts.',
-        tech: ['Vue 3', 'Node.js', 'OpenAI', 'Redis'],
+        title: 'Spring Boot Microservice',
+        summary: 'Java microservice with Spring Boot exposing REST endpoints and Dockerised for deployment.',
+        tech: ['Java', 'Spring Boot', 'Docker', 'PostgreSQL'],
         image: 'border-b border-cta/30 bg-primary/20',
-        status: 'V1.2',
-        link: '#'
-    },
-    {
-        title: 'Nexus UI Core',
-        summary: 'Open-source accessible component library.',
-        tech: ['React', 'Radix UI', 'Storybook', 'Vite'],
-        image: 'border-b border-cta/30 bg-primary/20',
-        status: 'RELEASE',
+        status: 'V1.0',
+        github: 'https://github.com/TryTytus',
         link: '#'
     }
 ];
@@ -51,12 +55,12 @@ export default function Projects() {
                     <div>
                         <div className="flex items-center gap-3 mb-4">
                             <FolderGit2 className="text-cta w-6 h-6" />
-                            <span className="font-mono text-cta uppercase tracking-widest text-sm">Deployments.log</span>
+                            <span className="bg-cta/20 text-cta border border-cta/40 px-2 py-0.5 text-xs uppercase tracking-widest font-mono">Deployments.log</span>
                         </div>
                         <h2 className="text-4xl md:text-5xl font-bold">Featured Projects</h2>
                     </div>
-                    <a href="#" className="hidden md:inline-flex items-center gap-2 text-cta hover:text-emerald-400 font-mono text-sm mt-6 border-b border-cta/30 hover:border-cta transition-colors pb-1">
-                        View Github Repository <ExternalLink className="w-4 h-4" />
+                    <a href="https://github.com/TryTytus" target="_blank" rel="noopener noreferrer" className="hidden md:inline-flex items-center gap-2 text-cta hover:text-emerald-400 font-mono text-sm mt-6 border-b border-cta/30 hover:border-cta transition-colors pb-1">
+                        github.com/TryTytus <ExternalLink className="w-4 h-4" />
                     </a>
                 </motion.div>
 
@@ -89,8 +93,8 @@ export default function Projects() {
                                 <div className="flex justify-between items-start mb-4">
                                     <h3 className="text-2xl font-bold group-hover:text-cta transition-colors">{project.title}</h3>
                                     <div className="flex gap-3 text-secondary group-hover:text-text-light transition-colors">
-                                        <Github className="w-5 h-5 hover:text-cta" />
-                                        <ExternalLink className="w-5 h-5 hover:text-cta" />
+                                        <a href={project.github} target="_blank" rel="noopener noreferrer"><Github className="w-5 h-5 hover:text-cta" /></a>
+                                        <a href={project.link} target="_blank" rel="noopener noreferrer"><ExternalLink className="w-5 h-5 hover:text-cta" /></a>
                                     </div>
                                 </div>
 
@@ -113,8 +117,8 @@ export default function Projects() {
                     ))}
                 </div>
 
-                <a href="#" className="md:hidden inline-flex items-center gap-2 text-cta hover:text-emerald-400 font-mono text-sm mt-8 border-b border-cta/30 transition-colors pb-1">
-                    View Github Repository <ExternalLink className="w-4 h-4" />
+                <a href="https://github.com/TryTytus" target="_blank" rel="noopener noreferrer" className="md:hidden inline-flex items-center gap-2 text-cta hover:text-emerald-400 font-mono text-sm mt-8 border-b border-cta/30 transition-colors pb-1">
+                    github.com/TryTytus <ExternalLink className="w-4 h-4" />
                 </a>
             </div>
         </section>
