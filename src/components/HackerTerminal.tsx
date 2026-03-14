@@ -151,40 +151,48 @@ export default function HackerTerminal() {
             {/* Terminal body */}
             <div
                 ref={terminalBodyRef}
-                className="p-6 h-[500px] overflow-y-auto overflow-x-hidden terminal-scrollbar flex flex-col gap-2 relative"
+                className="p-6 h-[500px] overflow-y-auto overflow-x-hidden terminal-scrollbar relative"
             >
                 {/* Subtle digital noise overlay */}
                 <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] pointer-events-none mix-blend-overlay"></div>
 
-                {lines.map((line, idx) => {
-                    const isActive = idx === lines.length - 1 && !isComplete && line.type !== 'ascii';
-                    return (
-                        <div key={idx} className={`${line.color || 'text-slate-300'} ${line.type === 'ascii' ? 'whitespace-pre text-[8px] sm:text-[10px] leading-none py-2 overflow-x-auto terminal-scrollbar' : 'break-words'}`}>
-                            {line.type === 'input' && <span className="text-emerald-500 mr-2 font-bold">adam@dev</span>}
-                            {line.type === 'input' && <span className="text-cyan-400 mr-2">❯</span>}
-                            {line.displayedText}
-                            {isActive && <span ref={activeTextRef}></span>}
-                            {isActive && (
-                                <motion.span
-                                    animate={{ opacity: [1, 0] }}
-                                    transition={{ repeat: Infinity, duration: 0.8 }}
-                                    className="inline-block w-2.5 h-4 bg-emerald-500 ml-1 align-middle"
-                                />
-                            )}
+                <div className="flex flex-col gap-2">
+                    {lines.map((line, idx) => {
+                        const isActive = idx === lines.length - 1 && !isComplete && line.type !== 'ascii';
+                        return (
+                            <div
+                                key={idx}
+                                className={`${line.color || 'text-slate-300'} ${line.type === 'ascii'
+                                        ? 'whitespace-pre text-[7px] sm:text-[9px] leading-tight py-1 block w-full overflow-x-hidden'
+                                        : 'break-words'
+                                    }`}
+                            >
+                                {line.type === 'input' && <span className="text-emerald-500 mr-2 font-bold">adam@dev</span>}
+                                {line.type === 'input' && <span className="text-cyan-400 mr-2">❯</span>}
+                                {line.displayedText}
+                                {isActive && <span ref={activeTextRef}></span>}
+                                {isActive && (
+                                    <motion.span
+                                        animate={{ opacity: [1, 0] }}
+                                        transition={{ repeat: Infinity, duration: 0.8 }}
+                                        className="inline-block w-2.5 h-4 bg-emerald-500 ml-1 align-middle"
+                                    />
+                                )}
+                            </div>
+                        );
+                    })}
+                    {isComplete && (
+                        <div className="text-slate-300 mt-2">
+                            <span className="text-emerald-500 mr-2 font-bold">adam@dev</span>
+                            <span className="text-cyan-400 mr-2">❯</span>
+                            <motion.span
+                                animate={{ opacity: [1, 0] }}
+                                transition={{ repeat: Infinity, duration: 0.8 }}
+                                className="inline-block w-2.5 h-4 bg-emerald-500 ml-1 align-middle"
+                            />
                         </div>
-                    );
-                })}
-                {isComplete && (
-                    <div className="text-slate-300 mt-2">
-                        <span className="text-emerald-500 mr-2 font-bold">adam@dev</span>
-                        <span className="text-cyan-400 mr-2">❯</span>
-                        <motion.span
-                            animate={{ opacity: [1, 0] }}
-                            transition={{ repeat: Infinity, duration: 0.8 }}
-                            className="inline-block w-2.5 h-4 bg-emerald-500 ml-1 align-middle"
-                        />
-                    </div>
-                )}
+                    )}
+                </div>
             </div>
 
             <style>{`
