@@ -150,11 +150,11 @@ export default function Projects() {
                                 <div className="flex justify-between items-start mb-4">
                                     <h3 className="text-2xl font-bold group-hover:text-cta transition-colors">{project.title}</h3>
                                     <div className="flex gap-3 text-secondary group-hover:text-text-light transition-colors">
-                                        {project.github && (
+                                        {/* {project.github && (
                                             <a href={project.github} target="_blank" rel="noopener noreferrer" className="z-10 relative">
                                                 <Github className="w-5 h-5 hover:text-cta" />
                                             </a>
-                                        )}
+                                        )} */}
                                         {project.link !== '#' && (
                                             <a href={project.link} target="_blank" rel="noopener noreferrer" className="z-10 relative">
                                                 <ExternalLink className="w-5 h-5 hover:text-cta" />
