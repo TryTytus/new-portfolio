@@ -1,41 +1,56 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Github, FolderGit2 } from 'lucide-react';
 
+import portfolioImg from '../assets/portfolio.png';
+import budohitImg from '../assets/budohit.png';
+import twitterImg from '../assets/twitter.png';
+import viviImg from '../assets/vivi.png';
+import instagramImg from '../assets/instagram.png';
+
 const projects = [
     {
         title: 'Portfolio Website',
         summary: 'This cyberpunk-themed developer portfolio — built with React, TypeScript and Framer Motion.',
         tech: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-        image: 'border-b border-cta/30 bg-primary/20',
+        image: portfolioImg,
         status: 'LIVE',
         github: 'https://github.com/TryTytus',
         link: '#'
     },
     {
-        title: 'REST API — PHP/SQL',
-        summary: 'Backend REST API built at Siemens: complex business logic, query optimisation and unit tests.',
-        tech: ['PHP', 'SQL', 'REST API', 'PHPUnit'],
-        image: 'border-b border-cta/30 bg-primary/20',
+        title: 'Budohit',
+        summary: 'E-commerce website selling construction company tools and equipment.',
+        tech: ['E-Commerce', 'React', 'Django', 'PostgreSQL', 'Web Development'],
+        image: budohitImg,
         status: 'PRODUCTION',
-        github: 'https://github.com/TryTytus',
+        github: '',
         link: '#'
     },
     {
-        title: 'Full Stack Web App',
-        summary: 'End-to-end web application with Laravel backend and Vue.js frontend, integrated via REST.',
-        tech: ['Laravel', 'Vue 3', 'MySQL', 'Docker'],
-        image: 'border-b border-cta/30 bg-primary/20',
-        status: 'DEPLOYED',
-        github: 'https://github.com/TryTytus',
+        title: 'Twitter-like Platform',
+        summary: 'Features user authentication, post creation, search, and nested comments (tree structure similar to Reddit).',
+        tech: ['Back-End', 'REST APIs', 'SQL', 'JavaScript'],
+        image: twitterImg,
+        status: 'Jun 2024 - Aug 2024',
+        github: 'https://github.com/TryTytus', // Replace with link if available
         link: '#'
     },
     {
-        title: 'Spring Boot Microservice',
-        summary: 'Java microservice with Spring Boot exposing REST endpoints and Dockerised for deployment.',
-        tech: ['Java', 'Spring Boot', 'Docker', 'PostgreSQL'],
-        image: 'border-b border-cta/30 bg-primary/20',
-        status: 'V1.0',
-        github: 'https://github.com/TryTytus',
+        title: 'Video Platform',
+        summary: 'Supports Google login, video uploads, and comments.',
+        tech: ['Back-End', 'REST APIs', 'Docker', 'SQL'],
+        image: viviImg,
+        status: 'May 2022 - Jun 2022',
+        github: 'https://github.com/TryTytus', // Replace with link if available
+        link: '#'
+    },
+    {
+        title: 'Instagram Clone',
+        summary: 'Includes profile browsing, posts, galleries, comments, and instant messaging.',
+        tech: ['Back-End', 'Front-End', 'JavaScript', 'SQL'],
+        image: instagramImg,
+        status: 'Aug 2021 - Nov 2021',
+        github: 'https://github.com/TryTytus', // Replace with link if available
         link: '#'
     }
 ];
@@ -75,12 +90,24 @@ export default function Projects() {
                             className="group relative rounded-none border border-cta/30 bg-background-dark/80 backdrop-blur-sm shadow-[0_0_10px_rgba(34,197,94,0.1)] hover:shadow-[0_0_20px_rgba(34,197,94,0.3)] transition-all cursor-pointer"
                         >
                             {/* Image / Gradient Placeholder area */}
-                            <div className={`h-64 w-full ${project.image} relative overflow-hidden flex items-center justify-center`}>
-                                <div className="absolute inset-0 bg-background-dark/20 group-hover:bg-transparent transition-colors duration-500" />
-                                <span className="font-mono text-4xl text-cta/20 font-bold select-none rotate-[-10deg] scale-150 group-hover:scale-110 transition-transform duration-700 ease-out">{project.title.toUpperCase()}</span>
+                            <div className="h-64 w-full border-b border-cta/30 bg-primary/20 relative overflow-hidden flex items-center justify-center">
+                                {/* The dark overlay matching the global theme */}
+                                <div className="absolute inset-0 bg-background-dark/60 group-hover:bg-background-dark/20 transition-colors duration-500 z-10" />
+
+                                {project.image ? (
+                                    <img
+                                        src={project.image}
+                                        alt={project.title}
+                                        className="absolute inset-0 w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-700 pointer-events-none"
+                                    />
+                                ) : (
+                                    <span className="font-mono text-4xl text-cta/20 font-bold select-none rotate-[-10deg] scale-150 group-hover:scale-110 transition-transform duration-700 ease-out z-0">
+                                        {project.title.toUpperCase()}
+                                    </span>
+                                )}
 
                                 {/* Overlay Status Badge */}
-                                <div className="absolute top-4 left-4 border border-cta/50 bg-background-dark/90 px-3 py-1 text-xs font-mono text-cta">
+                                <div className="absolute top-4 left-4 border border-cta/50 bg-background-dark/90 px-3 py-1 text-xs font-mono text-cta z-20">
                                     [{project.status}]
                                 </div>
                             </div>
@@ -93,8 +120,16 @@ export default function Projects() {
                                 <div className="flex justify-between items-start mb-4">
                                     <h3 className="text-2xl font-bold group-hover:text-cta transition-colors">{project.title}</h3>
                                     <div className="flex gap-3 text-secondary group-hover:text-text-light transition-colors">
-                                        <a href={project.github} target="_blank" rel="noopener noreferrer"><Github className="w-5 h-5 hover:text-cta" /></a>
-                                        <a href={project.link} target="_blank" rel="noopener noreferrer"><ExternalLink className="w-5 h-5 hover:text-cta" /></a>
+                                        {project.github && (
+                                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="z-10 relative">
+                                                <Github className="w-5 h-5 hover:text-cta" />
+                                            </a>
+                                        )}
+                                        {project.link !== '#' && (
+                                            <a href={project.link} target="_blank" rel="noopener noreferrer" className="z-10 relative">
+                                                <ExternalLink className="w-5 h-5 hover:text-cta" />
+                                            </a>
+                                        )}
                                     </div>
                                 </div>
 
