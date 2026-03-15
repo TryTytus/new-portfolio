@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, FolderGit2, Play, X } from 'lucide-react';
+import { ExternalLink, FolderGit2, Play, X } from 'lucide-react';
 
 import portfolioImg from '../assets/portfolio.png';
 import budohitImg from '../assets/budohit.png';
