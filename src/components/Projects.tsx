@@ -36,7 +36,7 @@ const projects = [
         status: 'Jun 2024 - Aug 2024',
         github: 'https://github.com/TryTytus',
         link: '#',
-        videoLink: 'https://private-user-images.githubusercontent.com/65718053/359100529-a1fb5b87-d15f-469c-92d2-0e8baa3833a9.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzM1ODE4MDAsIm5iZiI6MTc3MzU4MTUwMCwicGF0aCI6Ii82NTcxODA1My8zNTkxMDA1MjktYTFmYjViODctZDE1Zi00NjljLTkyZDItMGU4YmFhMzgzM2E5Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAzMTUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMzE1VDEzMzE0MFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTY1N2MyMThlMDUwZGFjN2M2NTNkZmE0MWUxZjExMDE2NDQzMDU5ZTAwOTMxOWYwNzBkNjMwYTNlOTQ0YTU5Y2UmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.jugXHWo4waq7KQqieuP5IBKpRkGPv_ecAfluJOhcBiE'
+        videoLink: '/videos/twitter.mp4'
     },
     {
         title: 'Video Platform',
@@ -46,7 +46,7 @@ const projects = [
         status: 'May 2022 - Jun 2022',
         github: 'https://github.com/TryTytus',
         link: '#',
-        videoLink: 'https://private-user-images.githubusercontent.com/65718053/359116362-bca21353-3f6a-4cba-adc6-89b3d2187c96.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzM1ODE4MDAsIm5iZiI6MTc3MzU4MTUwMCwicGF0aCI6Ii82NTcxODA1My8zNTkxMTYzNjItYmNhMjEzNTMtM2Y2YS00Y2JhLWFkYzYtODliM2QyMTg3Yzk2Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAzMTUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMzE1VDEzMzE0MFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTBkNmRiYWFkMDY1ZGE1ZDFiZGM2MTJkMTNhMTNiZjUxZDZlMDEzNzM2YzI0ZmFmNTc0ZWViYWJhMjdhZjNjOTImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.NE1Vt_OeS4RduY3zR1jRS6YQi3dhqAiw2pp4DXKgBu4'
+        videoLink: '/videos/vivi.mp4'
     },
     {
         title: 'Instagram Clone',
@@ -56,7 +56,7 @@ const projects = [
         status: 'Aug 2021 - Nov 2021',
         github: 'https://github.com/TryTytus',
         link: '#',
-        videoLink: 'https://private-user-images.githubusercontent.com/65718053/359132557-de77c763-dd27-4648-b542-b67ee136a354.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NzM1ODE4MDAsIm5iZiI6MTc3MzU4MTUwMCwicGF0aCI6Ii82NTcxODA1My8zNTkxMzI1NTctZGU3N2M3NjMtZGQyNy00NjQ4LWI1NDItYjY3ZWUxMzZhMzU0Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAzMTUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMzE1VDEzMzE0MFomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWQ2ODgxNGE1ODJjNGZlY2ZjYmM0NjA1MDIwMjRlMDk2YTA4ZTFlNGU5MWVlMjQ4ZDQ3YmU3MmM5Y2FkYmM5OTAmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.HsyQCA6npLy0g1SoByuDsQxVUmd_whxl5V_ajAYXjUU'
+        videoLink: '/videos/instagram.mp4'
     }
 ];
 
