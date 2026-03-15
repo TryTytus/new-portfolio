@@ -227,7 +227,6 @@ export default function Projects() {
                                 controls
                                 autoPlay
                                 playsInline
-                                crossOrigin="anonymous"
                             >
                                 Your browser does not support the video tag.
                             </video>
