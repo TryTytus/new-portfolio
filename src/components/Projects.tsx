@@ -72,7 +72,7 @@ export default function Projects() {
     };
     return (
         <section id="projects" className="relative min-h-screen py-24 bg-transparent border-t border-cta/10">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
@@ -101,13 +101,13 @@ export default function Projects() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-50px" }}
                             transition={{ duration: 0.6, delay: idx * 0.15 }}
-                            className="group relative rounded-none border border-cta/30 bg-background-dark/80 backdrop-blur-sm shadow-[0_0_10px_rgba(34,197,94,0.1)] hover:shadow-[0_0_20px_rgba(34,197,94,0.3)] transition-all cursor-pointer"
+                            className="group relative rounded-none border border-cta/30 bg-background-dark/80 backdrop-blur-sm shadow-[0_0_10px_rgba(34,197,94,0.1)] hover:shadow-[0_0_20px_rgba(34,197,94,0.3)] transition-all cursor-pointer z-50"
                             onClick={() => handleProjectClick(project)}
                         >
                             {/* Image / Gradient Placeholder area */}
                             <div className="h-64 w-full border-b border-cta/30 bg-primary/20 relative overflow-hidden flex items-center justify-center">
                                 {/* The dark overlay matching the global theme */}
-                                <div className="absolute inset-0 bg-background-dark/60 group-hover:bg-background-dark/20 transition-colors duration-500 z-10" />
+                                <div className="absolute inset-0 bg-transparent transition-colors duration-500 z-10" />
 
                                 {project.videoLink && (
                                     <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -128,7 +128,7 @@ export default function Projects() {
                                     <img
                                         src={project.image}
                                         alt={project.title}
-                                        className="absolute inset-0 w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 grayscale hover:grayscale-0 transition-all duration-700 pointer-events-none"
+                                        className="absolute inset-0 w-full h-full object-cover object-top opacity-100 transition-all duration-700 pointer-events-none"
                                     />
                                 ) : (
                                     <span className="font-mono text-4xl text-cta/20 font-bold select-none rotate-[-10deg] scale-150 group-hover:scale-110 transition-transform duration-700 ease-out z-0">
@@ -194,7 +194,7 @@ export default function Projects() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 lg:p-12 bg-background-dark/95 backdrop-blur-md"
+                        className="fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-6 lg:p-12 bg-background-dark/95 backdrop-blur-md"
                         onClick={() => setSelectedVideo(null)}
                     >
                         {/* Decorative scanlines */}
@@ -214,12 +214,6 @@ export default function Projects() {
                             >
                                 <X className="w-5 h-5" />
                             </button>
-
-                            <img
-                                src="/noise.png"
-                                className="absolute inset-0 w-full h-full object-cover opacity-[0.03] pointer-events-none mix-blend-overlay z-20"
-                                alt=""
-                            />
 
                             <video
                                 src={selectedVideo}

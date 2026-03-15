@@ -20,7 +20,7 @@ export default function CyberCV() {
                 style={{ backgroundImage: 'radial-gradient(var(--color-cta) 1px, transparent 1px)', backgroundSize: '40px 40px' }}
             />
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative w-full">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
@@ -30,7 +30,7 @@ export default function CyberCV() {
                 >
 
                     {/* ── ABOUT ─────────────────────────────── */}
-                    <motion.div variants={fadeIn}>
+                    <motion.div variants={fadeIn} className="relative z-50">
                         {/* Section header — matches Skills.tsx */}
                         <div className="mb-10 border-b border-secondary/30 pb-6 md:flex justify-between items-end">
                             <div>
@@ -61,7 +61,7 @@ export default function CyberCV() {
                         {/* Name + bio — now beside photo */}
                         <div className="flex flex-col md:flex-row gap-8 items-start mb-10">
                             {/* Photo */}
-                            <div className="relative w-40 h-40 shrink-0 overflow-hidden border border-cta/50 bg-background-dark/50 shadow-[0_0_20px_rgba(34,197,94,0.2)] group-hover:border-cta duration-500">
+                            <div className="relative w-40 h-40 shrink-0 overflow-hidden border border-cta/50 shadow-[0_0_20px_rgba(34,197,94,0.2)] group-hover:border-cta duration-500 z-50">
                                 <img
                                     src="/image.png"
                                     alt="Adam Tytoń"
