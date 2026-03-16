@@ -33,9 +33,9 @@ export default function Contact() {
                     {/* Form Content */}
                     <div className="p-8 md:p-12">
                         <div className="mb-8">
-                            <h2 className="text-3xl font-bold mb-2">Initialize Connection</h2>
+                            <h2 className="text-3xl font-bold mb-2">Contact Me</h2>
                             <p className="text-text-light/60 font-mono text-sm">
-                                System awaiting input parameters. Transmission securely routed.
+                                Send me a message and I'll get back to you as soon as possible.
                             </p>
                         </div>
 
