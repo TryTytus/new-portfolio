@@ -78,7 +78,7 @@ export default function Contact() {
 
                                 <div className="space-y-2">
                                     <label htmlFor="message" className="text-sm font-mono text-cta flex items-center gap-2">
-                                        <span className="text-secondary">{'>'}</span> Payload
+                                        <span className="text-secondary">{'>'}</span> Message
                                     </label>
                                     <textarea
                                         id="message"
