@@ -132,7 +132,7 @@ export default function CyberCV() {
                         <div className="space-y-1 mb-4">
                             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1">
                                 <h3 className="text-xl font-bold text-text-light">Full Stack Developer Intern</h3>
-                                <span className="text-text-light/40 text-sm whitespace-nowrap">Jul 2024 – Present</span>
+                                <span className="text-text-light/40 text-sm whitespace-nowrap">Jul 2025 – Present</span>
                             </div>
                             <p className="text-cta text-sm tracking-wider flex items-center gap-2">
                                 <span className="w-1.5 h-1.5 bg-cta inline-block" />
