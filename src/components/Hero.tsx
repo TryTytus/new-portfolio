@@ -42,7 +42,7 @@ export default function Hero() {
                             </span>
                         </h1>
                         <p className="text-xl text-text-light/70 mb-8 max-w-lg font-mono">
-                            &gt; Full Stack Developer @ Siemens. I build REST APIs with PHP &amp; SQL and craft frontends with JavaScript.
+                            &gt; Full Stack Developer @ Siemens. I build REST APIs with PHP, Node.js &amp; SQL and craft frontends with JavaScript.
                         </p>
 
                         <div className="flex flex-wrap gap-4 font-mono">

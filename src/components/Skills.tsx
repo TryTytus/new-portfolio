@@ -49,7 +49,7 @@ export default function Skills() {
                         <h2 className="text-4xl md:text-5xl font-bold">Skills &amp; Technologies</h2>
                     </div>
                     <p className="text-text-light/60 max-w-sm mt-6 md:mt-0 font-mono text-sm">
-                        Full stack competencies — from robust PHP &amp; SQL backends to polished JavaScript frontends.
+                        Full stack competencies — from robust PHP, Node.js &amp; SQL backends to polished JavaScript frontends.
                     </p>
                 </motion.div>
 

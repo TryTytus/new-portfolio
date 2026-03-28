@@ -80,7 +80,7 @@ export default function CyberCV() {
                                 <p className="text-cta/80 text-sm mb-4 tracking-wider font-mono">&lt; Software_Developer /&gt;</p>
                                 <p className="text-text-light/75 text-base leading-relaxed">
                                     I am a Full Stack Developer at Siemens Industry Software, responsible for end-to-end web application development.
-                                    My daily work spans efficient REST APIs in PHP &amp; SQL to interactive frontends in JavaScript.
+                                    My daily work spans efficient REST APIs in PHP, Node.js &amp; SQL to interactive frontends in JavaScript.
                                     I thrive in Scrum teams, write clean tested code, and am passionate about AI and machine learning.
                                 </p>
                             </div>
@@ -141,7 +141,7 @@ export default function CyberCV() {
                         </div>
                         <ul className="space-y-3 text-text-light/70 text-sm leading-relaxed pl-4 border-l border-secondary/30">
                             <li className="flex items-start gap-3"><span className="text-cta mt-0.5">▹</span> Creating user interfaces based on HTML &amp; JavaScript for a web application.</li>
-                            <li className="flex items-start gap-3"><span className="text-cta mt-0.5">▹</span> Implementing complex backend functions and creating REST APIs using PHP &amp; SQL.</li>
+                            <li className="flex items-start gap-3"><span className="text-cta mt-0.5">▹</span> Implementing complex backend functions and creating REST APIs using PHP, Node.js &amp; SQL.</li>
                             <li className="flex items-start gap-3"><span className="text-cta mt-0.5">▹</span> Business logic implementation and application performance optimization.</li>
                             <li className="flex items-start gap-3"><span className="text-cta mt-0.5">▹</span> Ensuring high code quality — active participation in Scrum team Daily Standups.</li>
                             <li className="flex items-start gap-3"><span className="text-cta mt-0.5">▹</span> Creating and conducting unit and end-to-end tests.</li>
